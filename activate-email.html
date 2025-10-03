@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Contact Form - Activate Email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .info {
+            background: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>🔧 Activate Email Service</h1>
+        
+        <div class="info">
+            <strong>Instructions:</strong>
+            <ol>
+                <li>Fill out this form with test data</li>
+                <li>Click "Send Test Email"</li>
+                <li>Check your email: <strong>nalamramyasri2@gmail.com</strong></li>
+                <li>Click the activation link in the email</li>
+                <li>After activation, your main portfolio contact form will work!</li>
+            </ol>
+        </div>
+
+        <form action="https://formsubmit.co/nalamramyasri2@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Test Name" value="Test User" required>
+            <input type="email" name="email" placeholder="Your Email" value="test@example.com" required>
+            <input type="text" name="subject" placeholder="Subject" value="FormSubmit Activation Test" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required>This is a test message to activate FormSubmit for nalamramyasri2@gmail.com. Please activate the service so the portfolio contact form can work properly.</textarea>
+            
+            <!-- Hidden fields for FormSubmit configuration -->
+            <input type="hidden" name="_next" value="https://google.com">
+            <input type="hidden" name="_subject" value="FormSubmit Activation Required">
+            <input type="hidden" name="_captcha" value="false">
+            
+            <button type="submit">Send Test Email & Activate</button>
+        </form>
+        
+        <div class="info">
+            <strong>What happens next:</strong>
+            <br>1. You'll receive an email from FormSubmit
+            <br>2. Click the activation link in that email
+            <br>3. Your portfolio contact form will start working!
+        </div>
+    </div>
+</body>
+</html>

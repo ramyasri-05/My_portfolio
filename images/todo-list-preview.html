@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #50c878 0%, #3ea566 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #50c878, #3ea566);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .add-task {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .input-group input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            border-color: #50c878;
+        }
+        
+        .add-btn {
+            background: #50c878;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .add-btn:hover {
+            background: #3ea566;
+            transform: translateY(-2px);
+        }
+        
+        .task-list {
+            padding: 20px;
+        }
+        
+        .task-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        
+        .task-item:hover {
+            background: #f8f9fa;
+        }
+        
+        .task-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #50c878;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .task-checkbox.completed {
+            background: #50c878;
+            color: white;
+        }
+        
+        .task-text {
+            flex: 1;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .task-text.completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        
+        .priority {
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .priority.high {
+            background: #ffe6e6;
+            color: #d63384;
+        }
+        
+        .priority.medium {
+            background: #fff3cd;
+            color: #fd7e14;
+        }
+        
+        .priority.low {
+            background: #d1ecf1;
+            color: #0dcaf0;
+        }
+        
+        .delete-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        .stats {
+            padding: 20px;
+            background: #f8f9fa;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+        
+        .stat {
+            color: #666;
+        }
+        
+        .stat strong {
+            display: block;
+            font-size: 24px;
+            color: #50c878;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✅ To-Do List App</h1>
+            <p>Stay organized and productive with task management</p>
+        </div>
+        
+        <div class="add-task">
+            <div class="input-group">
+                <input type="text" placeholder="Add a new task..." value="Complete portfolio project">
+                <button class="add-btn">+ Add</button>
+            </div>
+        </div>
+        
+        <div class="task-list">
+            <div class="task-item">
+                <div class="task-checkbox completed">✓</div>
+                <div class="task-text completed">Design portfolio layout</div>
+                <div class="priority high">HIGH</div>
+                <button class="delete-btn">🗑️</button>
+            </div>
+            
+            <div class="task-item">
+                <div class="task-checkbox">  </div>
+                <div class="task-text">Implement contact form</div>
+                <div class="priority medium">MEDIUM</div>
+                <button class="delete-btn">🗑️</button>
+            </div>
+            
+            <div class="task-item">
+                <div class="task-checkbox">  </div>
+                <div class="task-text">Add project images</div>
+                <div class="priority medium">MEDIUM</div>
+                <button class="delete-btn">🗑️</button>
+            </div>
+            
+            <div class="task-item">
+                <div class="task-checkbox">  </div>
+                <div class="task-text">Deploy to production</div>
+                <div class="priority low">LOW</div>
+                <button class="delete-btn">🗑️</button>
+            </div>
+            
+            <div class="task-item">
+                <div class="task-checkbox completed">✓</div>
+                <div class="task-text completed">Update resume</div>
+                <div class="priority high">HIGH</div>
+                <button class="delete-btn">🗑️</button>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat">
+                <strong>5</strong>
+                Total Tasks
+            </div>
+            <div class="stat">
+                <strong>2</strong>
+                Completed
+            </div>
+            <div class="stat">
+                <strong>3</strong>
+                Remaining
+            </div>
+        </div>
+    </div>
+</body>
+</html>
